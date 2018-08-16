@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <table>
+      <tr><td>Name</td><td>Score</td></tr>
+      <tr v-for="player in players">
+        <td>
+          <input type="text" v-model="player.name">
+        </td>
+        <td>
+          <input type="number" v-model.number="player.score">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button>New Player</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="vue.js"></script>
+  <script src="admin.js"></script>
+</body>
+
+</html>

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/terrygonguet/jams-hi-scores/issues"
   },
-  "homepage": "https://github.com/terrygonguet/jams-hi-scores#readme"
+  "homepage": "https://github.com/terrygonguet/jams-hi-scores#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
