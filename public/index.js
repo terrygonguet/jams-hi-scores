@@ -18,7 +18,7 @@ let app = new Vue({
     this.players.sort((a,b) => a.score < b.score ? 1 : (a.score > b.score ? -1 : 0))
   }
 })
-setInterval(() => {
+setInterval(async () => {
   let res = await fetch("players")
   if (!res.ok) {
     app.errorMessage = await res.text()
