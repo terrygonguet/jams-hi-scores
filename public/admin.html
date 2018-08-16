@@ -21,22 +21,30 @@ body, html {
 
 <body>
   <div id="container">
+    <span>&lt;Enter&gt; to save score change</span>
     <table>
       <tr><td>Name</td><td>Score</td></tr>
       <tr v-for="player in players">
         <td>
-          <input type="text" v-model="player.name">
+          {{player.name}}
         </td>
         <td>
-          <input type="number" v-model.number="player.score">
+          <input :disabled="!inputEnabled" type="number" v-model.number="player.score" @change="changeScore(player.name, player.score)">
+        </td>
+        <td>
+          <button @click="removePlayer(player.name)">remove</button>
         </td>
       </tr>
       <tr>
-        <td colspan="2">
-          <button>New Player</button>
+        <td>
+          <input type="text" v-model="newName" @keyup.enter="addPlayer">
+        </td>
+        <td>
+          <button :disabled="!addEnabled" @click="addPlayer">New Player</button>
         </td>
       </tr>
     </table>
+    <span>{{errorMessage}}</span>
   </div>
   <script src="vue.js"></script>
   <script src="admin.js"></script>

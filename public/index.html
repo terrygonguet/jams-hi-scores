@@ -8,6 +8,20 @@
 
 <body>
   <div id="container">
+    <table>
+      <tr v-for="(player, i) in players">
+        <td>
+          {{i+1}}
+        </td>
+        <td style="width:80%;">
+          {{player.name}}
+        </td>
+        <td>
+          {{player.score}}
+        </td>
+      </tr>
+    </table>
+    <span>{{errorMessage}}</span>
   </div>
   <script src="vue.js"></script>
   <script src="index.js"></script>
